@@ -1,5 +1,5 @@
 import {DomainOptEnum, xRouterClient} from "./api/x-router";
-import {askQuestion, changeDomains, delay, getMsgFromUnknown} from "./utils";
+import {askQuestion, changeDomains} from "./utils";
 import {domainsClient} from "./api/domains";
 
 // ---- Getting domains ----
@@ -20,7 +20,6 @@ try {
     console.error("Error: Unable to get allowed domains from github.");
     process.exit(1);
 }
-
 
 // ---- Founding domains for update ----
 let domainsToAdd: string[] = []

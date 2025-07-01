@@ -1,18 +1,6 @@
 import {DomainOptEnum, xRouterClient} from "../api/x-router";
 import * as readline from "node:readline";
 
-export function getMsgFromUnknown(data: unknown): string {
-    if (!(data && typeof data === 'object' && 'message' in data)) {
-        return 'Unknown message'
-    }
-
-    if (typeof data.message !== 'string') {
-        return 'Unknown message'
-    }
-
-    return data.message
-}
-
 export function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -45,8 +33,8 @@ export async function changeDomains(domains: string[], opt: DomainOptEnum) {
             code ? errorCount++ : successCount++
 
             process.stdout.write(getInfoMsg() + '\r')
-        } catch (err) {
-            console.error(`Error: ${getMsgFromUnknown(err)}`)
+        } catch {
+            errorCount++
         }
         await delay(100)
     }
