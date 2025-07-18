@@ -24,6 +24,7 @@ Create a .env file with the following variables:
 ```dotenv
 # Router IP address
 ROUTER_IP=192.168.31.1
+
 # Router authentication token
 ROUTER_AUTH_TOKEN=617c234d...
 ```
