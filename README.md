@@ -9,6 +9,7 @@ A small utility for updating VPN domains on Xiaomi routers.
 The project uses the following:
 - [TypeScript](https://www.typescriptlang.org/)
 - [Axios](https://axios-http.com/ru/docs/intro)
+- [TSX](https://tsx.is/)
 
 ## Install & Run
 ### Requirements
