@@ -14,10 +14,9 @@ try {
 
 let allowedDomains: string[] = []
 try {
-    const {data} = await domainsClient.getAllowedDomainsText()
-    allowedDomains = data.split('\n')
+    allowedDomains = await domainsClient.getAllowedDomains()
 } catch (err) {
-    console.error("Error: Unable to get allowed domains from github.");
+    console.error(`Error: ${err instanceof Error ? err.message : 'Unable to get allowed domains from the configured sources.'}`);
     process.exit(1);
 }
 
