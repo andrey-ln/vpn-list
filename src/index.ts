@@ -2,6 +2,14 @@ import {DomainOptEnum, xRouterClient} from "./api/x-router";
 import {askQuestion, changeDomains} from "./utils";
 import {domainsClient} from "./api/domains";
 
+console.info('Logging in to router...');
+try {
+    await xRouterClient.login();
+} catch (err) {
+    console.error(`Error: ${err instanceof Error ? err.message : 'Unable to log in to router.'}`);
+    process.exit(1);
+}
+
 // ---- Getting domains ----
 console.info('Getting domains...')
 let currentDomains: string[] = []
